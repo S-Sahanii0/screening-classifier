@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "screening-classifier"
+version = "0.1.0"
+description = "LLM classifier that replicates my own Group A / Group B systematic review screening decisions"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []  # core uses only the standard library
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+dev = ["pytest>=8", "httpx>=0.27", "fastapi>=0.110", "uvicorn>=0.29"]
+
+[project.scripts]
+screener = "screener.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

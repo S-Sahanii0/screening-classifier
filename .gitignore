@@ -1,0 +1,29 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+.ruff_cache/
+.mypy_cache/
+.coverage
+
+# local tooling
+.DS_Store
+.vscode/
+.cache/
+
+# Real labeled data: publisher abstracts plus my own review notes. Keep local.
+data/records.csv
+data/abstract_overrides.md
+
+# Run outputs that contain my private notes (the my_reason column). Keep summary.md.
+results/predictions_*.csv
+results/disagreements_*.md
